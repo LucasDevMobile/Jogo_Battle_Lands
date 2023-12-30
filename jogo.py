@@ -9,6 +9,7 @@ print('')
 print('O nome do seu personagem sera {}'.format(jogador1))
 print('')
 print('''As classes disponiveis sao:
+      
 [1] guerreiro
 [2] mago
 [3] paladino''')
@@ -22,6 +23,7 @@ print('')
 print('O nome do seu personagem sera {}'.format(jogador2))
 print('')
 print('''As classes disponiveis sao:
+      
 [1] guerreiro
 [2] mago
 [3] paladino''')
@@ -31,6 +33,7 @@ print('')
 print('A classe do seu personagem sera {}'.format(jogador2classe))
 print('')
 print('=====A BATALHA VAI COMECAR=====')
+print('')
 
 
 
@@ -38,11 +41,12 @@ dados1=int(input('jogador 1 Digite 1 para rolar o dado:'))
 
 if dados1==1 :
    dados2=randint(1,2)
-if dados2==1 or dados2==2:
+if dados2==1:
+        
 
-    mago = {'atk': 100, 'def': 40, 'hp': 100}
-    guerreiro = {'atk': 80, 'def': 60, 'hp': 150}
-    paladino = {'atk': 50, 'def': 80, 'hp': 200}
+    mago = {'atk': 100, 'def': 40, 'hp': 250}
+    guerreiro = {'atk': 80, 'def': 60, 'hp': 350}
+    paladino = {'atk': 50, 'def': 80, 'hp': 450}
 
     if jogador1classe == 'mago':
             jogador1 = mago
@@ -61,8 +65,10 @@ if dados2==1 or dados2==2:
     else:
         print("Classe inválida para o Jogador 2.")
 
-    resultado = jogador1['atk'] - jogador2['def']
-    print(resultado)
+    resultado = jogador2['hp'] - (jogador1['atk'] -jogador2['def'] )
+    print('')
+    print('Seu ataque foi efetivo, o HP restante do seu oponente eh {}'.format(resultado))
+
     
 else:print('Voce perdeu a vez, jogador 2 se prepare! ')
 
@@ -70,18 +76,19 @@ else:print('Voce perdeu a vez, jogador 2 se prepare! ')
 #======================================================================================
 
 
-dados2=int(input('jogador 2 Digite 1 para rolar o dado:'))
+dados1=int(input('jogador 2 Digite 1 para rolar o dado:'))
 
 if dados1==1 :
    dados2=randint(1,2)
-if dados2==1 or dados2==2:
+if dados2==1:
 
-    mago = {'atk': 100, 'def': 40, 'hp': 100}
-    guerreiro = {'atk': 80, 'def': 60, 'hp': 150}
-    paladino = {'atk': 50, 'def': 80, 'hp': 200}
+    mago = {'atk': 100, 'def': 40, 'hp': 250}
+    guerreiro = {'atk': 80, 'def': 60, 'hp': 350}
+    paladino = {'atk': 50, 'def': 80, 'hp': 450}
         
-    resultado = jogador2['atk'] - jogador1['def']
-    print(resultado)
+    resultado = jogador1['hp'] - (jogador2['atk'] -jogador1['def'] )
+    print('')
+    print('Seu ataque foi efetivo, o HP restante do seu oponente eh {}'.format(resultado))
         
 else:print('Voce perdeu a vez, jogador 1 se prepare! ')
       
